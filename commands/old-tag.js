@@ -10,22 +10,11 @@ class oldtagCommand extends Command {
             content: 'Calls tags',
             usage: 'tag <name>',
         },
-            args: [
-                {
-                    id: 'tagOption',
-                    type: 'string',
-                    // prompt: {
-                    //     start: 'What is the name of the tag you wat ?',
-                    //     retry: 'Uh. What?'
-                    // }
-                }
-            ]
-
         });
     }
 
-    async exec(message, args) {
-        console.log(args)
+    async exec(message) {
+        // console.log(args)
         // if (!args.tagOption) {
         //     // letmessage.split(' ')
         //     // return console.log(message)
@@ -33,8 +22,12 @@ class oldtagCommand extends Command {
         //     console.log(message.content)
             
         // }
-        const tagOption = message.content.slice(process.env.prefix.length).split(' ');
-        let tag = await this.client.tagdb.findOne({where: {name: tagOption}})
+        const args = message.content.slice(process.env.prefix.length).split(' ');
+        console.log(args)
+        if (args[1] === undefined) {
+            return message.channel.send('You have to say what tag you need!')
+        }
+        let tag = await this.client.tagdb.findOne({where: {name: args[1]}})
         if (!tag) {
             try {message.delete({timeout: 1500})} catch(e) {}
             let msg = await message.channel.send('That tag doesn\'t exist!')
