@@ -9,7 +9,7 @@ class ReadyListener extends Listener {
     }
 
     exec() {
-        console.log('I\'m ready!');
+        this.client.user.setActivity('Bloxlink RAP', { type: 'LISTENING' } )
     }
 }
 
