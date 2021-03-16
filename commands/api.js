@@ -13,10 +13,10 @@ class APICommand extends Command {
             args: [
                 {
                     id: 'userID',
-                    type: 'user',
+                    type: 'string', // was user
                     prompt: {
                         start: 'Please provide a user ID or a mention.',
-                        retry: 'That is not vaild user! Please provide a user ID or a mention.'
+                        // retry: 'That is not vaild user! Please provide a user ID or a mention.'
                     }
                 },
                 {
