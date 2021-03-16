@@ -2,10 +2,10 @@ const { Command } = require('discord-akairo');
 
 // This commands calls tags.
 
-class oldtagCommand extends Command {
+class sendtagCommand extends Command {
     constructor() {
-        super('old-tag', {
-           aliases: ['old-tag'],
+        super('send-tag', {
+           aliases: ['send-tag'],
            description: {
             content: 'Calls tags',
             usage: 'tag <name>',
@@ -14,14 +14,6 @@ class oldtagCommand extends Command {
     }
 
     async exec(message) {
-        // console.log(args)
-        // if (!args.tagOption) {
-        //     // letmessage.split(' ')
-        //     // return console.log(message)
-        //     // args.tagOption = 'usesupport2'
-        //     console.log(message.content)
-            
-        // }
         const args = message.content.slice(process.env.prefix.length).split(' ');
         console.log(args)
         if (args[1] === undefined) {
@@ -38,4 +30,4 @@ class oldtagCommand extends Command {
     }
 }
 
-module.exports = oldtagCommand;
+module.exports = sendtagCommand;

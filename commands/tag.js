@@ -11,15 +11,10 @@ class tag extends Command {
                   ['tag-delete', 'delete'],
                   ['tag-info', 'info'],
                   ['tag-edit', 'edit'],
-                  ['old-tag', 'oldtag']
+                  ['send-tag', 'send']
                 ],
-                // otherwise: Flag.continue(method.oldtagCommand),
-                // otherwise: `Use ${process.env.prefix}`
-                // otherwise: () => file(old-tag.js)
-                default: 'old-tag',
-                
+                default: 'send-tag',
               };
-              console.log(method + 'hello world')
               return Flag.continue(method);
            }
         });
