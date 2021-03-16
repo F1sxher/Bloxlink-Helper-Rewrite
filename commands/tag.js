@@ -1,38 +1,31 @@
-const { Command } = require('discord-akairo');
+const { Command, Flag } = require('discord-akairo');
 
-class TagCommand extends Command {
+class tag extends Command {
     constructor() {
         super('tag', {
            aliases: ['tag'],
-           description: {
-            content: 'Manages and calls tags',
-            usage: '<tag>'
-        },
-            args: [
-                {
-                    id: 'tagOption',
-                    type: 'string',
-                    // prompt: {
-                    //     start: 'What is the name of the tag you wat ?',
-                    //     retry: 'Uh. What?'
-                    // }
-                }
-            ]
-
+           *args() {
+            const method = yield {
+                type: [
+                  // [module-id, alias1, alias2...]
+                  ['tag-delete', 'delete'],
+                  ['tag-info', 'info'],
+                  ['tag-edit', 'edit'],
+                  ['old-tag', 'oldtag']
+                ],
+                // otherwise: Flag.continue(method.oldtagCommand),
+                // otherwise: `Use ${process.env.prefix}`
+                // otherwise: () => file(old-tag.js)
+                default: 'old-tag',
+                
+              };
+              console.log(method + 'hello world')
+              return Flag.continue(method);
+           }
         });
-    }
 
-    async exec(message, args) {
-        let tag = await this.client.tagdb.findOne({where: {name: args.tagOption}})
-        if (!tag) {
-            try {message.delete({timeout: 1500})} catch(e) {}
-            let msg = await message.channel.send('That tag doesn\'t exist!')
-            return msg.delete({timeout: 1500})
-        }
-        message.delete()
-        let msg = await message.channel.send(tag.text);
-        return msg.delete({timeout: 1500})
     }
+    
 }
 
-module.exports = TagCommand;
+module.exports = tag
