@@ -15,7 +15,6 @@ class sendtagCommand extends Command {
 
     async exec(message) {
         const args = message.content.slice(process.env.prefix.length).split(' ');
-        console.log(args)
         if (args[1] === undefined) {
             return message.channel.send('You have to say what tag you need!')
         }
