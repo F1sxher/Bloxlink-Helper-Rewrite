@@ -11,9 +11,9 @@ class tag extends Command {
                   ['tag-delete', 'delete'],
                   ['tag-info', 'info'],
                   ['tag-edit', 'edit'],
-                  ['send-tag', 'send']
+                  ['tag-send', 'send']
                 ],
-                default: 'send-tag',
+                default: 'tag-send',
               };
               return Flag.continue(method);
            }
