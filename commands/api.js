@@ -30,7 +30,7 @@ class APICommand extends Command {
     }
 
     async exec(message, args) {
-        let url = `https://api.blox.link/v1/user/${args.userID.id}` // Get url from command arguments.
+        let url = `https://api.blox.link/v1/user/${args.userID}` // Get url from command arguments.
         let response = await fetch(url); // Send a GET request to the url
         response = await response.json(); // Turns the response into
         response = await JSON.stringify(response); // Turn the JSON into a string so you can send it in a Discord message. Don't do this if you are not sending the whole JSON output as a string.
