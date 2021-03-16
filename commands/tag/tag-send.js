@@ -2,10 +2,10 @@ const { Command } = require('discord-akairo');
 
 // This commands calls tags.
 
-class sendtagCommand extends Command {
+class tagsendCommand extends Command {
     constructor() {
-        super('send-tag', {
-           aliases: ['send-tag'],
+        super('tag-send', {
+           aliases: ['tag-send'],
            description: {
             content: 'Calls tags',
             usage: 'tag <name>',
@@ -29,4 +29,4 @@ class sendtagCommand extends Command {
     }
 }
 
-module.exports = sendtagCommand;
+module.exports = tagsendCommand;
