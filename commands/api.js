@@ -8,14 +8,16 @@ class APICommand extends Command {
            aliases: ['api'],
            description: {
             content: 'Make a call to the Bloxlink API and return the JSON.',
-            usage: 'api <user id>'
+            usage: 'api <user id>',
+            
         },
+        channel: 'guild',
             args: [
                 {
                     id: 'userID',
                     type: 'string', // was user
                     prompt: {
-                        start: 'Please provide a user ID or a mention.',
+                        start: 'Please provide a user ID.',
                         // retry: 'That is not vaild user! Please provide a user ID or a mention.'
                     }
                 },

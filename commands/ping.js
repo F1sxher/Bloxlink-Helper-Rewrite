@@ -9,7 +9,7 @@ class PingCommand extends Command {
 
     async exec(message) {
         let msg = await message.channel.send('Pinging...');
-        console.log(this.handler.modules)
+        // console.log(this.handler.modules)
         return msg.edit(`Pong!\nLatency: \`${msg.createdTimestamp - message.createdTimestamp}ms\`\nAPI Latency: \`${Math.round(this.client.ws.ping)}ms\``);
     }
 }
