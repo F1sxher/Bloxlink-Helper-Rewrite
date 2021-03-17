@@ -4,6 +4,7 @@ class tag extends Command {
     constructor() {
         super('tag', {
            aliases: ['tag'],
+           channel: 'guild',
            *args() {
             const method = yield {
                 type: [
@@ -11,7 +12,7 @@ class tag extends Command {
                   ['tag-delete', 'delete'],
                   ['tag-info', 'info'],
                   ['tag-edit', 'edit'],
-                  ['tag-send', 'send']
+                  ['tag-send', 'send'],
                 ],
                 default: 'tag-send',
               };
