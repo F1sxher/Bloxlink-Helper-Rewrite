@@ -2,10 +2,10 @@ const { Command } = require('discord-akairo');
 const fetch = require('node-fetch');
 const Discord = require('discord.js');
 
-class APICommand extends Command {
+class hiCommand extends Command {
     constructor() {
-        super('api', {
-           aliases: ['api'],
+        super('hi', {
+           aliases: ['hi'],
            description: {
             content: 'Make a call to the Bloxlink API and return the JSON.',
             usage: 'api <user id>',
@@ -46,5 +46,5 @@ class APICommand extends Command {
     }
 }
 
-module.exports = APICommand;
+module.exports = hiCommand;
 // module.exports = class APICommand extends Command {}    
