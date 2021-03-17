@@ -25,6 +25,7 @@ class tagsendCommand extends Command {
             return msg.delete({timeout: 1500})
         }
         message.delete()
+        tag.increment("uses");
         return message.channel.send(tag.text);
     }
 }
