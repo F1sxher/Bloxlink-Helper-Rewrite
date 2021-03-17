@@ -5,7 +5,7 @@ const { Command } = require('discord-akairo');
 class tagsendCommand extends Command {
     constructor() {
         super('tag-send', {
-           aliases: ['tag-send'],
+        //    aliases: ['tag-send'],
            description: {
             content: 'Calls tags',
             usage: 'tag <name>',
@@ -20,9 +20,13 @@ class tagsendCommand extends Command {
         }
         let tag = await this.client.tagdb.findOne({where: {name: args[1]}})
         if (!tag) {
+        tag = await this.client.tagdb.findOne({where: {aliases: args[1]}})
+        if (!tag) {
             try {message.delete({timeout: 1500})} catch(e) {}
             let msg = await message.channel.send('That tag doesn\'t exist!')
-            return msg.delete({timeout: 1500})
+            return msg.delete({timeout: 1500}) 
+        }
+
         }
         message.delete()
         tag.increment("uses");

@@ -5,7 +5,7 @@ const { Command } = require('discord-akairo');
 class tagcreateCommand extends Command {
     constructor() {
         super('tag-info', {
-           aliases: ['tag-info'],
+        //    aliases: ['tag-info'],
            description: {
             content: 'Creates tags',
             usage: 'tag create <name>',
