@@ -25,18 +25,32 @@ class tagcreateCommand extends Command {
 
     async exec(message, args) {
         // const args = message.content.slice(process.env.prefix.length).split(' ');
-       console.log(args)
+    //    console.log(args)
         let tag = await this.client.tagdb.findOne({where: {name: args.tagName}})
         if (!tag) {
-            try {message.delete({timeout: 1500})} catch(e) {}
-            let msg = await message.channel.send('That tag doesn\'t exist!')
-            return msg.delete({timeout: 1500})
+            tag = await this.client.tagdb.findOne({where: {aliases: args[1]}})
+            if (!tag) {
+                try {message.delete({timeout: 1500})} catch(e) {}
+                let msg = await message.channel.send('That tag doesn\'t exist!')
+                return msg.delete({timeout: 1500}) 
+            }
         }
         const embed = this.client.util.embed()
-        embed.setTitle(`Tag Info: ${tag.name}`);
-        embed.setDescription(
-            `Created by: <@${tag.creatorid}>\nUses: ${tag.uses}\nAliases: \`${tag.aliases}\`\nCreated: ${tag.createdAt}\nUpdated: ${tag.updatedAt}`
-          );
+        embed.setTitle(`Tag Info`);
+        embed.addFields(
+            { name: 'Content', value: tag.text },
+            { name: 'Name', value: tag.name,  inline: true },
+            { name: 'Aliases', value: tag.aliases,  inline: true},
+            { name: 'Uses', value: tag.uses, inline: true },
+            { name: 'Author', value: `<@${tag.creatorid}>`},
+
+        )
+        embed.setTimestamp()
+        embed.setColor('#0797C3')
+
+        // embed.setDescription(
+        //     `Created by: <@${tag.creatorid}>\nUses: ${tag.uses}\nAliases: \`${tag.aliases}\`\nCreated: ${tag.createdAt}\nUpdated: ${tag.updatedAt}`
+        //   );
           embed.setAuthor(message.author.tag, message.author.displayAvatarURL());
         return message.channel.send(embed);
     }
