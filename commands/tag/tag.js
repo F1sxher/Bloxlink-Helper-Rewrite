@@ -13,6 +13,7 @@ class tag extends Command {
                   ['tag-info', 'info'],
                   ['tag-edit', 'edit'],
                   ['tag-send', 'send'],
+                  ['tag-raw', 'send-raw'],
                 ],
                 default: 'tag-send',
               };
