@@ -2,7 +2,7 @@ const { Command } = require('discord-akairo');
 const fetch = require('node-fetch');
 const Discord = require('discord.js');
 
-module.exports = class APICommand extends Command {
+module.exports = class hiCommand extends Command {
     constructor() {
         super('hi', {
             aliases: ['hi'],
