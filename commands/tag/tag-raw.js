@@ -30,7 +30,7 @@ class tagRawCommand extends Command {
         }
         message.delete()
         tag.increment("uses");
-        return message.channel.send(`__Raw Tag:__ **${tag.name}**\n \n${tag.text}`);
+        return message.channel.send(`__Raw Tag:__ **${tag.name}**\n \n\`\`\`${tag.text}\`\`\``);
     }
 }
 
