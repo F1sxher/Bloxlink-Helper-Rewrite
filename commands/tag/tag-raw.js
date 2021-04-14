@@ -2,13 +2,13 @@ const { Command } = require('discord-akairo');
 
 // This commands calls tags raw.
 
-class tagsendCommand extends Command {
+class tagRawCommand extends Command {
     constructor() {
         super('tag-raw', {
-        //    aliases: ['tag-send'],
+        //    aliases: ['tag-raw'],
            description: {
-            content: 'Calls tags (raw)',
-            usage: 'tag raw <name>',
+            content: 'Calls raw tags',
+            usage: 'tag-raw <name>',
         },
         });
     }
@@ -30,8 +30,8 @@ class tagsendCommand extends Command {
         }
         message.delete()
         tag.increment("uses");
-        return message.channel.send(tag.text);
+        return message.channel.send(`__Raw Tag:__ **${tag.name}**\n \n${tag.text}`);
     }
 }
 
-module.exports = tagsendCommand;
+module.exports = tagRawCommand;
