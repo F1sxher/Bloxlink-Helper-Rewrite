@@ -1,7 +1,7 @@
 {
-  "name": "platinum",
+  "name": "bloxlink-helper",
   "version": "2.0.0",
-  "description": "Super cool Discord bot.",
+  "description": "Super cool tag Discord bot.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
