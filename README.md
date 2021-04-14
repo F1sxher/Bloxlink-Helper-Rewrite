@@ -12,5 +12,6 @@
 - [ ] ~~Apply command~~
 - [ ] ~~Partner command~~
 Using Google Forms Instead
+- [ ] Use a listener to read messages attempting to use Bloxlink commands outside of #bot-commands (expection to staff)
 
 Thank you to [@TheShadowGamer](https://github.com/TheShadowGamer) for helping (and doing 😆 things for) me.
