@@ -76,3 +76,6 @@ typings/
 .fusebox/
 .data/db.sqlite
 .data/tagdb.sqlite
+
+# REPL
+.replit
