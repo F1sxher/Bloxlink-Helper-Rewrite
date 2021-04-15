@@ -32,7 +32,7 @@ class quote extends Command {
         }
 
         let msglnk;
-        if(args.messageId.includes('.com' || args.messageId.includes('/'))){
+        if(args.messageId.includes('discord.com' || args.messageId.includes('/channels'))){
           msglnk = args.messageId.split('channels')
           msglnk = msglnk[1].split('/')
           msglnk = msglnk[3]
