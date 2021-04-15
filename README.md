@@ -2,8 +2,8 @@
 ---------------------
 ## Tag commands 
   - [ ] Tag Create
-  - [x] Tag send (default tag subcommand e.g. `.tag faq`
-  - [ ] Tag Raw (to view the tags in a blockquote)
+  - [x] Tag send (default tag subcommand e.g. `.tag faq`)
+  - [x] Tag Raw (to view the tags in a blockquote)
   - [ ] Tag Info (to get info on a tag, how many uses it has, who created, last updated
   - [ ] Tag Edit (to edit an existing tag)
   
