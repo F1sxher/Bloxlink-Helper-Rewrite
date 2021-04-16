@@ -15,4 +15,8 @@ module.exports = {
     '!!', // Bloxlink Secondary (If pro)
     '??' // Bloxlink Canary
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master

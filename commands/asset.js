@@ -49,4 +49,8 @@ class assetAPICommand extends Command {
 }
 
 module.exports = assetAPICommand;
+<<<<<<< HEAD
 // module.exports = class APICommand extends Command {}    
+=======
+// module.exports = class APICommand extends Command {}    
+>>>>>>> origin/master

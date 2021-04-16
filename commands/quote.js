@@ -32,7 +32,11 @@ class quote extends Command {
         }
 
         let msglnk;
+<<<<<<< HEAD
         if(args.messageId.includes('.com' || args.messageId.includes('/'))){
+=======
+        if(args.messageId.includes('discord.com' || args.messageId.includes('/channels/'))){
+>>>>>>> origin/master
           msglnk = args.messageId.split('channels')
           msglnk = msglnk[1].split('/')
           msglnk = msglnk[3]
@@ -46,4 +50,8 @@ class quote extends Command {
     }
 }
 
+<<<<<<< HEAD
 module.exports = quote;
+=======
+module.exports = quote;
+>>>>>>> origin/master
