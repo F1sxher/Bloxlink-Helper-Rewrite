@@ -13,6 +13,9 @@ module.exports = {
   prefixes: [
     '!', // Bloxlink (or Pro)
     '!!', // Bloxlink Secondary (If pro)
-    '??' // Bloxlink Canary
+    '??', // Bloxlink Canary
+    '@Bloxlink', // Ping Attempt
+    '@Bloxlink#6871', // Another Ping Attempt
+    '<@426537812993638400>' // Last Ping Attempt 
   ]
 }
